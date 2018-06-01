@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Mail{% endblock %}</title>
+</head>
+
+<body>
+
+<div style="margin: 0 auto;background-color: #ffffff;padding: 1em">
+    <div style="width: 100%;background-color: #0275D8;position: relative;display: inline-block;
+box-shadow: 8px 8px 12px #555;">
+        <div style="float: left;margin-top: .6em;margin-left: .5em">
+            <img src="https://www.codeur.com/system/user_profiles/avatars/000/218/049/large/avatar.jpg?1502449416" alt="" style="width: 50px;height: 50px;border-radius: 50px">
+        </div>
+        <!--<div style="float: left;font-family: 'Agency FB';margin-left: .7em;margin-top: 1em;text-align: center">
+            <h2 style="letter-spacing: 0.3em;font-size: 1.1em;padding: 0;margin: 0;color: #000000">Jocelyn RAZ</h2>
+            <h4 style="letter-spacing: 0.3em;font-size: .6em;padding: 0;margin: 0.3em;color: #ffffff">Développeur</h4>
+        </div>-->
+        <div style="float: left">
+            <span style="font-family: 'Agency FB';display: inline-block;
+            margin-top: .5em;margin-left: 1em;font-size: 1.8em;color: #ffffff;font-weight: 100">
+                Madasoftware</span>
+        </div>
+    </div>
+    <div style="width: 95%;border-left: 1px solid #0275D8;border-bottom: 1px solid #0275D8;border-right: 1px solid #0275D8
+    ;position: relative;
+    display: inline-block;margin-top: -.3em;padding: 1em;font-family: 'Open Sans Light';background-color: #F3F3F3">
+        <p style="margin-bottom: 1em">Bonjour {{ nom }},</p>
+
+        <p>Vous avez été inscrit sur <a href="https://www.madasoftware.com/">www.madasoftware.com</a></p>
+        <p>Veuillez saisir votre mot de passe <a href="{{ url('active-user',{'token':token}) }}">ici.</a></p>
+
+        <p  style="margin-top: 3em">Cordialement.</p>
+        <p>L'équipe de Webcenter Madagascar</p>
+
+        {#{% if type == 'Reset' %}#}
+            {#<p style="margin-bottom: 1em">Bonjour {{ nom }},</p>#}
+            {#<p>Vous avez oublié votre mot de passe.</p>#}
+            {#<p>Veuillez le saisir <a href="{{ url('client_register_finish',{'token':token}) }}">ici.</a></p>#}
+            {#<p  style="margin-top: 3em">Cordialement.</p>#}
+            {#<p>L'équipe de Webcenter Madagascar</p>#}
+        {#{% endif %}#}
+
+    </div>
+</div>
+{#'token' => $token#}
+</body>
+
+</html>

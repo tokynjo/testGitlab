@@ -1,0 +1,41 @@
+{% include '::base.html.twig' %}
+{% block body %}
+
+    <div class="container" style="margin: 0 auto">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <form method="POST" action="#" role="form">
+                            <div class="form-group">
+                                <h2>Validation de compte</h2>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Mot de passe</label>
+                                <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Vérification</label>
+                                <input type="password" class="form-control" id="password1" placeholder="Retaper le mot de passe">
+                            </div>
+                            <input type="hidden" id="token" value="{{ token }}">
+                            {#<button type="submit" id="activer" class="btn btn-default">Valider</button>#}
+                            <div class="form-group">
+                                <button id="signupSubmit" type="submit" class="btn btn-info btn-block">Valider</button>
+                            </div>
+                            <div id="loader" style="position: absolute;left: 50%"></div>
+                            {#<div id="dialog" title="Basic dialog">#}
+                                {#<p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>#}
+                            {#</div>#}
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+
+
+        </div>
+    </div>
+
+{% endblock %}

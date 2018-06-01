@@ -1,0 +1,25 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    app.container:
+        class: AppBundle\Services\ContainerService
+        arguments: ['@doctrine.orm.entity_manager','@service_container']
+
+    app.tools:
+        class: AppBundle\Services\ToolsService
+        arguments: ['@service_container']
+
+    app.utilisateur:
+        class: AppBundle\Services\Utilisateur\UserService
+        arguments: ['@app.container']
+
+    app.mailer:
+        class: AppBundle\Services\SendMailService
+        arguments: ['@service_container','@mailer']
+
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
